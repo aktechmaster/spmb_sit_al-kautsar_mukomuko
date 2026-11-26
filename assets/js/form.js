@@ -7,7 +7,7 @@
 // =========================================================================
 // PENTING: TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI BAWAH INI
 // =========================================================================
-const GAS_WEB_APP_URL = "PASTE_URL_WEB_APP_GOOGLE_APPS_SCRIPT_ANDA_DI_SINI";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwDNWR5TgD1mBj8al4muPEyov_rG1Bs2rW6xesoXWzAi5DytmfzdVm6F6872zpy0EI-zw/exec";
 
 const MAX_FILE_SIZE_BYTES = 2 * 1024 * 1024; // 2 MB
 const ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "application/pdf"];
