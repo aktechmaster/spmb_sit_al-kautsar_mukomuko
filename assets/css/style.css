@@ -1,0 +1,142 @@
+/* =========================================================
+   SIT AL-KAUTSAR MUKOMUKO - SPMB 2027/2028
+   Custom Stylesheet & Print Styling
+   ========================================================= */
+
+:root {
+  --emerald-primary: #065F46;
+  --amber-accent: #D97706;
+  --surface-bg: #F8FAFC;
+}
+
+/* Pola Geometris Halus pada Hero */
+.hero-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Badge Keunggulan pada Kartu Jenjang */
+.badge-feature {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #065F46;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 9999px;
+}
+
+/* Form Elements (Mobile-friendly tap targets) */
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 0.4rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  font-size: 0.9375rem;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #065F46;
+  box-shadow: 0 0 0 3px rgba(6, 95, 70, 0.15);
+}
+
+.form-input.input-error {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.file-input {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 0.875rem;
+  color: #475569;
+  background-color: #F8FAFC;
+  border: 1.5px dashed #94A3B8;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button {
+  margin-right: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #065F46;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.file-input::file-selector-button:hover {
+  background-color: #044735;
+}
+
+/* Animasi Halus */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.faq-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   PRINT STYLING (Untuk Cetak / Simpan PDF Bukti Pendaftaran)
+   ========================================================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  #printable-receipt {
+    border: 2px solid #065F46 !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+    page-break-inside: avoid;
+  }
+}
