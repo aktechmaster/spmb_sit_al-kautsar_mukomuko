@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Pendaftaran SPMB 2027/2028 | SIT AL-KAUTSAR MUKOMUKO</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: {
+            emeraldPrimary: '#065F46',
+            emeraldDark: '#044735',
+            amberAccent: '#D97706',
+            amberHover: '#B45309',
+            surface: '#F8FAFC',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-surface text-slate-800 font-sans antialiased">
+
+  <!-- ==================== NAVBAR STICKY ==================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emeraldPrimary text-white flex items-center justify-center shadow-md">
+            <i data-lucide="book-open-check" class="w-6 h-6"></i>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-base sm:text-lg font-extrabold text-emeraldPrimary">SIT AL-KAUTSAR</span>
+            <span class="block text-xs font-semibold text-slate-500">MUKOMUKO • SPMB 2027/2028</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="index.html#beranda" class="hover:text-emeraldPrimary transition">Beranda</a>
+          <a href="index.html#jenjang" class="hover:text-emeraldPrimary transition">Jenjang</a>
+          <a href="index.html#alur-biaya" class="hover:text-emeraldPrimary transition">Alur &amp; Biaya</a>
+          <a href="index.html#faq" class="hover:text-emeraldPrimary transition">FAQ</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="cek-status.html" class="px-4 py-2.5 rounded-xl border-2 border-emeraldPrimary text-emeraldPrimary font-bold text-sm hover:bg-emerald-50 transition">
+            Cek Status
+          </a>
+          <a href="daftar.html" class="px-5 py-2.5 rounded-xl bg-amberAccent text-white font-bold text-sm shadow-md">
+            Daftar Sekarang
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" type="button" aria-label="Buka Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+      <a href="index.html#beranda" class="block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50">Beranda</a>
+      <a href="index.html#jenjang" class="block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50">Jenjang Pendidikan</a>
+      <a href="index.html#alur-biaya" class="block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50">Alur &amp; Biaya</a>
+      <a href="index.html#faq" class="block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50">FAQ</a>
+      <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-3">
+        <a href="cek-status.html" class="text-center py-3 rounded-xl border-2 border-emeraldPrimary text-emeraldPrimary font-bold text-sm">Cek Status</a>
+        <a href="daftar.html" class="text-center py-3 rounded-xl bg-amberAccent text-white font-bold text-sm">Daftar Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
+
+    <!-- Header Formulir -->
+    <div id="form-header" class="text-center mb-8 no-print">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold uppercase tracking-wider mb-2">
+        Formulir Online Tanpa Login
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+        Pendaftaran Murid Baru TA 2027/2028
+      </h1>
+      <p class="text-sm text-slate-600 mt-1.5">
+        SIT AL-KAUTSAR MUKOMUKO • Yayasan AL-AMANAH MUKOMUKO
+      </p>
+    </div>
+
+    <!-- ==================== FORM CONTAINER ==================== -->
+    <div id="registration-container" class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden no-print">
+      <!-- Progress Bar -->
+      <div class="bg-slate-50 border-b border-slate-200 px-6 py-5">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+          <span id="step-indicator-text">Langkah 1 dari 4: Pilihan Pendaftaran</span>
+          <span id="step-percentage" class="text-emeraldPrimary">25%</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-emeraldPrimary transition-all duration-300 rounded-full" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <!-- Alert Box -->
+      <div id="form-alert" class="hidden mx-6 mt-5 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium flex items-start gap-2.5">
+        <i data-lucide="alert-circle" class="w-5 h-5 shrink-0 mt-0.5"></i>
+        <span id="form-alert-text"></span>
+      </div>
+
+      <form id="spmb-form" novalidate class="p-6 sm:p-8">
+
+        <!-- STEP 1: PILIHAN PENDAFTARAN -->
+        <div class="form-step" data-step="1">
+          <h2 class="text-lg font-extrabold text-slate-900 mb-1">1. Pilihan Pendaftaran</h2>
+          <p class="text-xs text-slate-500 mb-6">Tentukan jenjang, gelombang, dan jalur pendaftaran yang diinginkan.</p>
+
+          <div class="space-y-5">
+            <div>
+              <label for="jenjang" class="form-label">Jenjang yang Dituju <span class="text-red-500">*</span></label>
+              <select id="jenjang" name="jenjang" required class="form-input">
+                <option value="">-- Pilih Jenjang Pendidikan --</option>
+                <option value="PAUD IT 1">PAUD IT 1 Al-Kautsar</option>
+                <option value="PAUD IT 2">PAUD IT 2 Al-Kautsar</option>
+                <option value="SD IT">SD IT Al-Kautsar</option>
+                <option value="SMP IT">SMP IT Al-Kautsar</option>
+                <option value="SMA IT">SMA IT Al-Kautsar</option>
+              </select>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="gelombang" class="form-label">Gelombang Pendaftaran <span class="text-red-500">*</span></label>
+                <select id="gelombang" name="gelombang" required class="form-input">
+                  <option value="Gelombang 1 (TA 2027/2028)">Gelombang 1 (Nov 2026 – Feb 2027)</option>
+                  <option value="Gelombang 2 (TA 2027/2028)">Gelombang 2 (Mar – Mei 2027)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="jalur" class="form-label">Jalur Pendaftaran <span class="text-red-500">*</span></label>
+                <select id="jalur" name="jalur" required class="form-input">
+                  <option value="Reguler">Jalur Reguler</option>
+                  <option value="Prestasi">Jalur Prestasi (Akademik / Tahfizh)</option>
+                  <option value="Indent">Jalur Indent / Saudara Kandung</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: BIODATA CALON MURID -->
+        <div class="form-step hidden" data-step="2">
+          <h2 class="text-lg font-extrabold text-slate-900 mb-1">2. Biodata Calon Murid</h2>
+          <p class="text-xs text-slate-500 mb-6">Pastikan data sesuai dengan Akta Kelahiran / Kartu Keluarga.</p>
+
+          <div class="space-y-5">
+            <div>
+              <label for="nama_lengkap" class="form-label">Nama Lengkap (Sesuai Akta) <span class="text-red-500">*</span></label>
+              <input type="text" id="nama_lengkap" name="nama_lengkap" required placeholder="Contoh: Muhammad Fatih Al-Kautsar" class="form-input" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="nik" class="form-label">NIK Calon Murid (16 Digit) <span class="text-red-500">*</span></label>
+                <input type="text" id="nik" name="nik" inputmode="numeric" maxlength="16" required placeholder="1706xxxxxxxxxxxx" class="form-input" />
+              </div>
+
+              <div>
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin <span class="text-red-500">*</span></label>
+                <select id="jenis_kelamin" name="jenis_kelamin" required class="form-input">
+                  <option value="">-- Pilih --</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="tempat_lahir" class="form-label">Tempat Lahir <span class="text-red-500">*</span></label>
+                <input type="text" id="tempat_lahir" name="tempat_lahir" required placeholder="Contoh: Mukomuko" class="form-input" />
+              </div>
+
+              <div>
+                <label for="tanggal_lahir" class="form-label">Tanggal Lahir <span class="text-red-500">*</span></label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" required class="form-input" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="anak_ke" class="form-label">Anak Ke- <span class="text-red-500">*</span></label>
+                <input type="number" id="anak_ke" name="anak_ke" min="1" max="20" required placeholder="Contoh: 1" class="form-input" />
+              </div>
+
+              <div>
+                <label for="asal_sekolah" class="form-label">Asal Sekolah (TK/SD/SMP)</label>
+                <input type="text" id="asal_sekolah" name="asal_sekolah" placeholder="Kosongkan jika belum sekolah" class="form-input" />
+              </div>
+            </div>
+
+            <div>
+              <label for="riwayat_kesehatan" class="form-label">Riwayat Kesehatan / Alergi</label>
+              <textarea id="riwayat_kesehatan" name="riwayat_kesehatan" rows="2" placeholder="Tuliskan jika ada alergi makanan/obat atau kondisi khusus. Tulis 'Tidak ada' jika sehat." class="form-input"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: DATA ORANG TUA / WALI & DOMISILI -->
+        <div class="form-step hidden" data-step="3">
+          <h2 class="text-lg font-extrabold text-slate-900 mb-1">3. Data Orang Tua / Wali &amp; Domisili</h2>
+          <p class="text-xs text-slate-500 mb-6">Nomor WhatsApp aktif digunakan untuk informasi jadwal observasi dan cek status.</p>
+
+          <div class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="nama_ayah" class="form-label">Nama Lengkap Ayah <span class="text-red-500">*</span></label>
+                <input type="text" id="nama_ayah" name="nama_ayah" required placeholder="Nama Ayah" class="form-input" />
+              </div>
+
+              <div>
+                <label for="nama_ibu" class="form-label">Nama Lengkap Ibu <span class="text-red-500">*</span></label>
+                <input type="text" id="nama_ibu" name="nama_ibu" required placeholder="Nama Ibu" class="form-input" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="no_wa" class="form-label">Nomor WhatsApp Aktif <span class="text-red-500">*</span></label>
+                <input type="tel" id="no_wa" name="no_wa" required placeholder="08xxxxxxxxxx" class="form-input" />
+                <p class="text-[11px] text-slate-500 mt-1">Gunakan nomor WA yang aktif menerima pesan.</p>
+              </div>
+
+              <div>
+                <label for="pekerjaan_ortu" class="form-label">Pekerjaan Orang Tua <span class="text-red-500">*</span></label>
+                <input type="text" id="pekerjaan_ortu" name="pekerjaan_ortu" required placeholder="Contoh: Wiraswasta / ASN / Petani" class="form-input" />
+              </div>
+            </div>
+
+            <div>
+              <label for="alamat" class="form-label">Alamat Domisili Lengkap <span class="text-red-500">*</span></label>
+              <textarea id="alamat" name="alamat" rows="3" required placeholder="Jalan/Desa, RT/RW, Kecamatan, Kabupaten Mukomuko" class="form-input"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: UNGGAH BERKAS (OPSIONAL / FLEKSIBEL) -->
+        <div class="form-step hidden" data-step="4">
+          <h2 class="text-lg font-extrabold text-slate-900 mb-1">4. Unggah Berkas Pendaftaran</h2>
+          <p class="text-xs text-slate-500 mb-5">Format yang didukung: JPG, PNG, atau PDF (Maksimal 2 MB per file).</p>
+
+          <!-- Opsi Menyusul -->
+          <label class="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-200 cursor-pointer mb-6">
+            <input type="checkbox" id="berkas_menyusul" name="berkas_menyusul" class="mt-1 w-4 h-4 accent-emeraldPrimary rounded" />
+            <div class="text-sm">
+              <span class="font-bold text-slate-900 block">Berkas Menyusul via WhatsApp</span>
+              <span class="text-xs text-slate-600">Centang opsi ini jika foto Kartu Keluarga atau Bukti Transfer belum siap sekarang agar pendaftaran tetap bisa diproses.</span>
+            </div>
+          </label>
+
+          <div id="upload-fields" class="space-y-5">
+            <div>
+              <label for="file_bukti_transfer" class="form-label">Bukti Transfer Biaya Formulir (Opsional)</label>
+              <input type="file" id="file_bukti_transfer" accept=".jpg,.jpeg,.png,.pdf" class="file-input" />
+              <p class="text-[11px] text-slate-500 mt-1">Maks. 2 MB (JPG, PNG, PDF).</p>
+            </div>
+
+            <div>
+              <label for="file_kk" class="form-label">Foto / Scan Kartu Keluarga (Opsional)</label>
+              <input type="file" id="file_kk" accept=".jpg,.jpeg,.png,.pdf" class="file-input" />
+              <p class="text-[11px] text-slate-500 mt-1">Maks. 2 MB (JPG, PNG, PDF).</p>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
+            <strong>Pernyataan:</strong> Dengan menekan tombol <em>Kirim Pendaftaran</em>, saya menyatakan bahwa seluruh data yang diisikan adalah benar sesuai dokumen resmi.
+          </div>
+        </div>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between gap-3">
+          <button type="button" id="btn-prev" class="hidden px-5 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-50 transition flex items-center gap-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Sebelumnya</span>
+          </button>
+
+          <button type="button" id="btn-next" class="ml-auto px-6 py-3 rounded-xl bg-emeraldPrimary hover:bg-emeraldDark text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+            <span>Lanjutkan</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <button type="submit" id="btn-submit" class="hidden ml-auto px-7 py-3.5 rounded-xl bg-amberAccent hover:bg-amberHover text-white font-bold text-sm shadow-lg transition flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span id="btn-submit-text">Kirim Pendaftaran</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ==================== TAMPILAN SUKSES (KARTU BUKTI PENDAFTARAN DIGITAL) ==================== -->
+    <div id="success-card" class="hidden space-y-6 animate-fade-in">
+      <!-- Printable Card -->
+      <div id="printable-receipt" class="bg-white rounded-3xl border-2 border-emeraldPrimary shadow-xl overflow-hidden">
+        <!-- Kop Kartu -->
+        <div class="bg-emeraldPrimary text-white px-6 py-6 sm:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+              <i data-lucide="book-open-check" class="w-7 h-7 text-amber-300"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-emerald-100 uppercase tracking-wider">Yayasan AL-AMANAH MUKOMUKO</p>
+              <h2 class="text-lg sm:text-xl font-extrabold">SIT AL-KAUTSAR MUKOMUKO</h2>
+              <p class="text-xs text-emerald-100">Bukti Pendaftaran Digital SPMB TA 2027/2028</p>
+            </div>
+          </div>
+          <div class="bg-white/15 px-4 py-2 rounded-xl text-left sm:text-right">
+            <span class="block text-[11px] text-emerald-100 uppercase">Nomor Registrasi</span>
+            <span id="res-no-reg" class="text-lg sm:text-xl font-extrabold text-amber-300 tracking-wide">SPMB-2027-001</span>
+          </div>
+        </div>
+
+        <!-- Body Kartu -->
+        <div class="p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+            <i data-lucide="check-circle-2" class="w-6 h-6 text-emeraldPrimary shrink-0"></i>
+            <div class="text-sm">
+              <strong class="block">Alhamdulillah, Pendaftaran Berhasil Tercatat!</strong>
+              <span class="text-xs text-emerald-800">Simpan atau cetak kartu ini, lalu lakukan konfirmasi ke Admin WhatsApp.</span>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 text-sm border-y border-slate-200 py-5">
+            <div>
+              <span class="text-xs text-slate-500 block">Nama Calon Murid</span>
+              <strong id="res-nama" class="text-slate-900 text-base">-</strong>
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 block">Jenjang Tujuan</span>
+              <strong id="res-jenjang" class="text-emeraldPrimary text-base">-</strong>
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 block">Gelombang / Jalur</span>
+              <strong id="res-jalur" class="text-slate-800">-</strong>
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 block">Tanggal Pendaftaran</span>
+              <strong id="res-tanggal" class="text-slate-800">-</strong>
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 block">Nomor WhatsApp Terdaftar</span>
+              <strong id="res-wa" class="text-slate-800">-</strong>
+            </div>
+            <div>
+              <span class="text-xs text-slate-500 block">Status Saat Ini</span>
+              <span class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-amber-100 text-amberAccent text-xs font-bold">Menunggu Verifikasi</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Gunakan Nomor Registrasi atau Nomor WhatsApp di atas untuk memantau status verifikasi berkas dan jadwal observasi pada halaman <strong>Cek Status</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tombol Aksi Setelah Submit -->
+      <div class="grid sm:grid-cols-2 gap-3.5 no-print">
+        <button type="button" onclick="window.print()" class="py-3.5 px-5 rounded-xl border-2 border-emeraldPrimary text-emeraldPrimary hover:bg-emerald-50 font-bold text-sm transition flex items-center justify-center gap-2">
+          <i data-lucide="printer" class="w-5 h-5"></i>
+          <span>Cetak / Simpan PDF Bukti Daftar</span>
+        </button>
+
+        <a id="btn-wa-confirm" href="#" target="_blank" rel="noopener noreferrer" class="py-3.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>Konfirmasi ke Admin WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="text-center no-print">
+        <a href="cek-status.html" class="text-sm font-bold text-emeraldPrimary hover:underline">
+          Ke Halaman Cek Status Pendaftaran →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="fixed bottom-5 right-5 z-50 no-print">
+    <div id="wa-modal" class="hidden mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="bg-emeraldPrimary text-white px-4 py-3 flex items-center justify-between">
+        <div>
+          <p class="text-sm font-bold">Hubungi Admin SPMB</p>
+          <p class="text-[11px] text-emerald-100">Pilih jenjang yang ingin ditanyakan</p>
+        </div>
+        <button type="button" onclick="toggleWaModal()" class="text-white/80 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="p-3 space-y-2 text-sm" id="wa-admin-list"></div>
+    </div>
+    <button type="button" onclick="toggleWaModal()" aria-label="Bantuan Admin" class="ml-auto flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3.5 rounded-full shadow-lg">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="hidden sm:inline text-sm">Bantuan Admin</span>
+    </button>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form.js"></script>
+</body>
+</html>
