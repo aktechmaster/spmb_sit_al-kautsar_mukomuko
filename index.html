@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPMB 2027/2028 | SIT AL-KAUTSAR MUKOMUKO</title>
+  <meta name="description" content="Sistem Penerimaan Murid Baru (SPMB) Tahun Ajaran 2027/2028 SIT AL-KAUTSAR MUKOMUKO - Yayasan AL-AMANAH MUKOMUKO. Dibuka jenjang PAUD IT 1, PAUD IT 2, SD IT, SMP IT, dan SMA IT." />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            emeraldPrimary: '#065F46',
+            emeraldDark: '#044735',
+            amberAccent: '#D97706',
+            amberHover: '#B45309',
+            surface: '#F8FAFC',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-surface text-slate-800 font-sans antialiased selection:bg-emeraldPrimary selection:text-white">
+
+  <!-- ==================== NAVBAR STICKY ==================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Nama SIT -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-emeraldPrimary text-white flex items-center justify-center shadow-md group-hover:bg-emeraldDark transition">
+            <i data-lucide="book-open-check" class="w-6 h-6"></i>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-base sm:text-lg font-extrabold text-emeraldPrimary tracking-tight">SIT AL-KAUTSAR</span>
+            <span class="block text-xs font-semibold text-slate-500">MUKOMUKO • SPMB 2027/2028</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="#beranda" class="hover:text-emeraldPrimary transition">Beranda</a>
+          <a href="#jenjang" class="hover:text-emeraldPrimary transition">Jenjang</a>
+          <a href="#alur-biaya" class="hover:text-emeraldPrimary transition">Alur &amp; Biaya</a>
+          <a href="#faq" class="hover:text-emeraldPrimary transition">FAQ</a>
+        </nav>
+
+        <!-- Desktop Action Buttons -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="cek-status.html" class="px-4 py-2.5 rounded-xl border-2 border-emeraldPrimary text-emeraldPrimary font-bold text-sm hover:bg-emerald-50 transition">
+            Cek Status
+          </a>
+          <a href="daftar.html" class="px-5 py-2.5 rounded-xl bg-amberAccent text-white font-bold text-sm hover:bg-amberHover shadow-md shadow-amber-600/20 transition flex items-center gap-2">
+            <span>Daftar Sekarang</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Buka Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 transition">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+      <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Beranda</a>
+      <a href="#jenjang" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Jenjang Pendidikan</a>
+      <a href="#alur-biaya" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Alur &amp; Biaya</a>
+      <a href="#faq" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">FAQ</a>
+      <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-3">
+        <a href="cek-status.html" class="text-center py-3 rounded-xl border-2 border-emeraldPrimary text-emeraldPrimary font-bold text-sm">Cek Status</a>
+        <a href="daftar.html" class="text-center py-3 rounded-xl bg-amberAccent text-white font-bold text-sm">Daftar Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="beranda" class="relative overflow-hidden bg-gradient-to-br from-emeraldPrimary via-emerald-800 to-emeraldDark text-white">
+    <!-- Decorative Islamic Geometric Pattern Overlay -->
+    <div class="absolute inset-0 hero-pattern opacity-10 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-24">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 backdrop-blur-sm text-amber-300 text-xs sm:text-sm font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+            Pendaftaran Gelombang 1 TA 2027/2028 Resmi Dibuka
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            Mencetak Generasi <span class="text-amber-300">Qur'ani, Berakhlak Mulia,</span> &amp; Berprestasi Global
+          </h1>
+
+          <p class="text-emerald-100 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Selamat datang di portal resmi Sistem Penerimaan Murid Baru (SPMB) <strong>SIT AL-KAUTSAR MUKOMUKO</strong> di bawah naungan <strong>Yayasan AL-AMANAH MUKOMUKO</strong>. Pendaftaran mudah dari rumah, tanpa perlu membuat akun atau kata sandi.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+            <a href="daftar.html" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-amberAccent hover:bg-amberHover text-white font-bold text-base shadow-lg shadow-black/20 transition">
+              <i data-lucide="file-pen-line" class="w-5 h-5"></i>
+              <span>Daftar Sekarang</span>
+            </a>
+            <a href="#alur-biaya" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-base backdrop-blur-sm transition">
+              <i data-lucide="download" class="w-5 h-5"></i>
+              <span>Unduh Brosur &amp; Biaya</span>
+            </a>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="pt-4 flex flex-wrap items-center gap-6 text-sm text-emerald-100">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-300"></i>
+              <span>5 Unit Pendidikan Terpadu</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-300"></i>
+              <span>Daftar Online 5 Menit</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-300"></i>
+              <span>Kabupaten Mukomuko</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Card (School Highlight) -->
+        <div class="lg:col-span-5">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div class="aspect-[4/3] rounded-2xl bg-gradient-to-tr from-emerald-950/70 to-emerald-700/60 border border-white/15 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+              <div class="w-16 h-16 rounded-2xl bg-amberAccent/90 text-white flex items-center justify-center mb-4 shadow-lg">
+                <i data-lucide="graduation-cap" class="w-9 h-9"></i>
+              </div>
+              <h2 class="text-xl font-extrabold text-white">SIT AL-KAUTSAR MUKOMUKO</h2>
+              <p class="text-xs sm:text-sm text-emerald-100 mt-1">Yayasan AL-AMANAH MUKOMUKO</p>
+              <span class="mt-4 inline-block px-3 py-1 rounded-full bg-white/15 text-xs font-semibold text-amber-200">
+                PAUD IT 1 • PAUD IT 2 • SD IT • SMP IT • SMA IT
+              </span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 text-center">
+              <div class="bg-white/10 rounded-xl p-3">
+                <div class="text-xl sm:text-2xl font-extrabold text-amber-300">5</div>
+                <div class="text-[11px] sm:text-xs text-emerald-100 font-medium">Jenjang IT</div>
+              </div>
+              <div class="bg-white/10 rounded-xl p-3">
+                <div class="text-xl sm:text-2xl font-extrabold text-amber-300">100%</div>
+                <div class="text-[11px] sm:text-xs text-emerald-100 font-medium">Online Mudah</div>
+              </div>
+              <div class="bg-white/10 rounded-xl p-3">
+                <div class="text-xl sm:text-2xl font-extrabold text-amber-300">JSIT</div>
+                <div class="text-[11px] sm:text-xs text-emerald-100 font-medium">Standar Mutu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== QUICK INFO BAR (4 KARTU) ==================== -->
+  <section class="relative z-10 -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-md flex items-start gap-4">
+        <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center shrink-0">
+          <i data-lucide="calendar-days" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Periode Pendaftaran</p>
+          <p class="text-sm font-bold text-slate-900 mt-0.5">Gelombang 1 &amp; 2</p>
+          <p class="text-xs text-slate-500 mt-0.5">Nov 2026 – Mei 2027</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-md flex items-start gap-4">
+        <div class="w-11 h-11 rounded-xl bg-amber-50 text-amberAccent flex items-center justify-center shrink-0">
+          <i data-lucide="wallet" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Biaya Formulir</p>
+          <p class="text-sm font-bold text-slate-900 mt-0.5">Mulai Rp 150.000</p>
+          <p class="text-xs text-slate-500 mt-0.5">Potongan khusus jalur Indent</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-md flex items-start gap-4">
+        <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center shrink-0">
+          <i data-lucide="users" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Jalur Pendaftaran</p>
+          <p class="text-sm font-bold text-slate-900 mt-0.5">Reguler, Prestasi, Indent</p>
+          <p class="text-xs text-slate-500 mt-0.5">Kuota terbatas per rombel</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-md flex items-start gap-4">
+        <div class="w-11 h-11 rounded-xl bg-amber-50 text-amberAccent flex items-center justify-center shrink-0">
+          <i data-lucide="headphones" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kontak Cepat Admin</p>
+          <p class="text-sm font-bold text-slate-900 mt-0.5">Layanan WhatsApp</p>
+          <button type="button" onclick="openWaModal()" class="text-xs font-bold text-emeraldPrimary hover:underline mt-0.5">
+            Hubungi Admin Jenjang →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PILIHAN JENJANG PENDIDIKAN ==================== -->
+  <section id="jenjang" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold uppercase tracking-wider mb-3">
+        Unit Pendidikan Dibuka
+      </span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
+        Pilih Jenjang Pendidikan Putra-Putri Anda
+      </h2>
+      <p class="text-slate-600 mt-3 text-sm sm:text-base">
+        Klik tombol <strong>Daftar Jenjang Ini</strong> untuk langsung menuju formulir pendaftaran dengan pilihan jenjang otomatis terisi.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- PAUD IT 1 -->
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emeraldPrimary/40 transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="w-12 h-12 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center">
+              <i data-lucide="smile" class="w-6 h-6"></i>
+            </span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold">Dibuka</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900">PAUD IT 1 Al-Kautsar</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Pendidikan usia dini berbasis bermain yang menyenangkan untuk menumbuhkan cinta Al-Qur'an, kemandirian, dan motorik anak.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge-feature">Pembiasaan Adab</span>
+            <span class="badge-feature">Hafalan Juz 30</span>
+            <span class="badge-feature">Sentra Bermain</span>
+          </div>
+        </div>
+        <a href="daftar.html?jenjang=PAUD%20IT%201" class="mt-6 w-full py-3 px-4 rounded-xl bg-emeraldPrimary hover:bg-emeraldDark text-white font-bold text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Daftar Jenjang Ini</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </article>
+
+      <!-- PAUD IT 2 -->
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emeraldPrimary/40 transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="w-12 h-12 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold">Dibuka</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900">PAUD IT 2 Al-Kautsar</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Layanan PAUD Islam Terpadu dengan lingkungan belajar ramah anak, stimulasi pra-literasi, dan karakter Islami sejak dini.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge-feature">Tahfizh Ceria</span>
+            <span class="badge-feature">Bina Pribadi Islami</span>
+            <span class="badge-feature">Ramah Anak</span>
+          </div>
+        </div>
+        <a href="daftar.html?jenjang=PAUD%20IT%202" class="mt-6 w-full py-3 px-4 rounded-xl bg-emeraldPrimary hover:bg-emeraldDark text-white font-bold text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Daftar Jenjang Ini</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </article>
+
+      <!-- SD IT -->
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emeraldPrimary/40 transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="w-12 h-12 rounded-xl bg-amber-50 text-amberAccent flex items-center justify-center">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold">Dibuka</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900">SD IT Al-Kautsar</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Memadukan Kurikulum Nasional dengan kurikulum khas JSIT untuk membangun fondasi akademik kuat, ibadah tertib, dan hafalan Al-Qur'an.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge-feature">Tahfizh Qur'an</span>
+            <span class="badge-feature">Kurikulum Terpadu</span>
+            <span class="badge-feature">Full Day School</span>
+          </div>
+        </div>
+        <a href="daftar.html?jenjang=SD%20IT" class="mt-6 w-full py-3 px-4 rounded-xl bg-emeraldPrimary hover:bg-emeraldDark text-white font-bold text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Daftar Jenjang Ini</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </article>
+
+      <!-- SMP IT -->
+      <article class="bg-white rounded-2xl border-2 border-emeraldPrimary/30 p-6 shadow-md hover:shadow-xl hover:border-emeraldPrimary transition flex flex-col justify-between relative">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="w-12 h-12 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </span>
+            <span class="px-3 py-1 rounded-full bg-amber-100 text-amberAccent text-xs font-bold">Kuota Terbatas</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900">SMP IT Al-Kautsar</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Membentuk remaja tangguh berkarakter pemimpin, unggul dalam sains, literasi digital, bahasa, dan pembinaan tahfizh intensif.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge-feature">Tahfizh Intensif</span>
+            <span class="badge-feature">Bina Pribadi Islami</span>
+            <span class="badge-feature">Klub Olimpiade</span>
+          </div>
+        </div>
+        <a href="daftar.html?jenjang=SMP%20IT" class="mt-6 w-full py-3 px-4 rounded-xl bg-amberAccent hover:bg-amberHover text-white font-bold text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Daftar Jenjang Ini</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </article>
+
+      <!-- SMA IT -->
+      <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emeraldPrimary/40 transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="w-12 h-12 rounded-xl bg-amber-50 text-amberAccent flex items-center justify-center">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </span>
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold">Dibuka</span>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900">SMA IT Al-Kautsar</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Mempersiapkan lulusan siap masuk Perguruan Tinggi Negeri/Swasta terbaik dengan bekal akidah kokoh, kepemimpinan, dan kemandirian.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="badge-feature">Bimbingan PTN</span>
+            <span class="badge-feature">Tahfizh &amp; Bahasa</span>
+            <span class="badge-feature">Leadership Camp</span>
+          </div>
+        </div>
+        <a href="daftar.html?jenjang=SMA%20IT" class="mt-6 w-full py-3 px-4 rounded-xl bg-emeraldPrimary hover:bg-emeraldDark text-white font-bold text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Daftar Jenjang Ini</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </article>
+
+      <!-- Info Bantuan Card -->
+      <article class="bg-gradient-to-br from-emeraldPrimary to-emeraldDark text-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+        <div>
+          <span class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4">
+            <i data-lucide="message-circle-question" class="w-6 h-6 text-amber-300"></i>
+          </span>
+          <h3 class="text-xl font-extrabold">Bingung Memilih Jalur?</h3>
+          <p class="text-sm text-emerald-100 mt-2 leading-relaxed">
+            Tim Panitia SPMB SIT AL-KAUTSAR MUKOMUKO siap membantu konsultasi jenjang, jadwal observasi, hingga informasi beasiswa.
+          </p>
+        </div>
+        <button type="button" onclick="openWaModal()" class="mt-6 w-full py-3 px-4 rounded-xl bg-white text-emeraldPrimary hover:bg-emerald-50 font-bold text-sm transition flex items-center justify-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span>Tanya Admin via WhatsApp</span>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== ALUR PENDAFTARAN & VIDEO PANDUAN ==================== -->
+  <section id="alur-biaya" class="py-16 lg:py-24 bg-white border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- 4 Langkah Visual -->
+        <div class="lg:col-span-7">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amberAccent text-xs font-bold uppercase tracking-wider mb-3">
+            Mudah &amp; Tanpa Login
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            4 Langkah Mudah Pendaftaran SPMB
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">
+            Orang tua dapat mendaftarkan ananda kapan saja langsung dari HP tanpa perlu mengingat password.
+          </p>
+
+          <div class="mt-8 space-y-5">
+            <!-- Step 1 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-emeraldPrimary text-white font-extrabold flex items-center justify-center shrink-0 shadow">1</div>
+              <div>
+                <h3 class="font-bold text-slate-900">Isi Formulir Online</h3>
+                <p class="text-sm text-slate-600 mt-0.5">Pilih jenjang pendidikan, lengkapi biodata calon murid, data orang tua, dan alamat domisili.</p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-emeraldPrimary text-white font-extrabold flex items-center justify-center shrink-0 shadow">2</div>
+              <div>
+                <h3 class="font-bold text-slate-900">Unggah Berkas atau Kirim Menyusul</h3>
+                <p class="text-sm text-slate-600 mt-0.5">Unggah Kartu Keluarga &amp; bukti transfer biaya formulir, atau pilih opsi kirim menyusul lewat WhatsApp.</p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-emeraldPrimary text-white font-extrabold flex items-center justify-center shrink-0 shadow">3</div>
+              <div>
+                <h3 class="font-bold text-slate-900">Simpan Bukti &amp; Konfirmasi WhatsApp</h3>
+                <p class="text-sm text-slate-600 mt-0.5">Unduh/cetak Kartu Bukti Pendaftaran Digital berisi Nomor Registrasi, lalu klik konfirmasi ke Admin.</p>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-amberAccent text-white font-extrabold flex items-center justify-center shrink-0 shadow">4</div>
+              <div>
+                <h3 class="font-bold text-slate-900">Observasi &amp; Cek Status Kelulusan</h3>
+                <p class="text-sm text-slate-600 mt-0.5">Ikuti jadwal observasi sesuai arahan panitia dan pantau status kapan saja di menu <strong>Cek Status</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Panduan Embed -->
+        <div class="lg:col-span-5">
+          <div class="bg-slate-900 rounded-3xl p-3 shadow-xl border border-slate-800">
+            <div class="aspect-video rounded-2xl overflow-hidden bg-slate-800 relative">
+              <!-- Ganti URL embed YouTube di bawah dengan video tutorial resmi sekolah -->
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+                title="Video Panduan Pendaftaran SPMB SIT AL-KAUTSAR MUKOMUKO"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="px-3 pt-3 pb-1 flex items-center justify-between text-white">
+              <div>
+                <p class="text-sm font-bold">Video Panduan Pendaftaran</p>
+                <p class="text-xs text-slate-400">Durasi ±2 menit • Tutorial langkah demi langkah</p>
+              </div>
+              <span class="w-9 h-9 rounded-full bg-amberAccent/20 text-amber-400 flex items-center justify-center">
+                <i data-lucide="play" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== KEUNGGULAN & TRANSPARANSI BIAYA ==================== -->
+      <div class="mt-20 pt-16 border-t border-slate-200">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <!-- Keunggulan SIT -->
+          <div class="lg:col-span-5 space-y-5">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold uppercase tracking-wider">
+              Mengapa SIT Al-Kautsar?
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Pendidikan Terpadu Berkarakter Islami
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-surface border border-slate-200/80 flex gap-3.5">
+                <i data-lucide="book-heart" class="w-6 h-6 text-emeraldPrimary shrink-0 mt-0.5"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Program Tahfizh Terstruktur</h4>
+                  <p class="text-xs text-slate-600 mt-1">Target hafalan terukur dengan bimbingan guru tahfizh bersanad dan mutaba'ah harian.</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-surface border border-slate-200/80 flex gap-3.5">
+                <i data-lucide="shield-check" class="w-6 h-6 text-emeraldPrimary shrink-0 mt-0.5"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Lingkungan Aman &amp; Islami</h4>
+                  <p class="text-xs text-slate-600 mt-1">Pembiasaan adab, shalat berjamaah, dan pendampingan karakter (Bina Pribadi Islami).</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-surface border border-slate-200/80 flex gap-3.5">
+                <i data-lucide="trophy" class="w-6 h-6 text-amberAccent shrink-0 mt-0.5"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Program Beasiswa &amp; Indent</h4>
+                  <p class="text-xs text-slate-600 mt-1">Tersedia potongan uang pangkal untuk pendaftar Indent, Alumni/Saudara Kandung, dan Jalur Prestasi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabel Transparansi Biaya -->
+          <div class="lg:col-span-7">
+            <div class="bg-surface rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+              <div class="p-5 sm:p-6 bg-emeraldPrimary text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div>
+                  <h3 class="text-lg font-extrabold">Ringkasan Biaya Pendaftaran TA 2027/2028</h3>
+                  <p class="text-xs text-emerald-100 mt-0.5">Estimasi biaya formulir &amp; informasi jalur keringanan</p>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-lg bg-white/15 text-xs font-bold text-amber-200 self-start sm:self-auto">
+                  Transparan
+                </span>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-slate-100 text-slate-700 font-bold text-xs uppercase">
+                    <tr>
+                      <th class="px-5 py-3.5">Jenjang</th>
+                      <th class="px-5 py-3.5">Biaya Formulir</th>
+                      <th class="px-5 py-3.5">Program Keringanan</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 bg-white">
+                    <tr>
+                      <td class="px-5 py-3.5 font-bold text-slate-900">PAUD IT 1 &amp; 2</td>
+                      <td class="px-5 py-3.5 text-slate-700">Rp 150.000</td>
+                      <td class="px-5 py-3.5 text-xs text-emeraldPrimary font-semibold">Diskon Indent &amp; Saudara Kandung</td>
+                    </tr>
+                    <tr>
+                      <td class="px-5 py-3.5 font-bold text-slate-900">SD IT</td>
+                      <td class="px-5 py-3.5 text-slate-700">Rp 200.000</td>
+                      <td class="px-5 py-3.5 text-xs text-emeraldPrimary font-semibold">Diskon Alumni PAUD IT &amp; Indent</td>
+                    </tr>
+                    <tr>
+                      <td class="px-5 py-3.5 font-bold text-slate-900">SMP IT</td>
+                      <td class="px-5 py-3.5 text-slate-700">Rp 250.000</td>
+                      <td class="px-5 py-3.5 text-xs text-emeraldPrimary font-semibold">Beasiswa Tahfizh &amp; Prestasi</td>
+                    </tr>
+                    <tr>
+                      <td class="px-5 py-3.5 font-bold text-slate-900">SMA IT</td>
+                      <td class="px-5 py-3.5 text-slate-700">Rp 250.000</td>
+                      <td class="px-5 py-3.5 text-xs text-emeraldPrimary font-semibold">Beasiswa Tahfizh &amp; Prestasi</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="p-4 sm:p-5 bg-amber-50/70 border-t border-amber-200/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <p class="text-xs text-slate-700">
+                  <strong>Catatan:</strong> Rincian lengkap SPP &amp; Uang Pangkal tiap unit dapat diminta langsung melalui Admin WhatsApp jenjang masing-masing.
+                </p>
+                <button type="button" onclick="openWaModal()" class="shrink-0 px-4 py-2 rounded-lg bg-amberAccent hover:bg-amberHover text-white text-xs font-bold transition">
+                  Minta Rincian PDF
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== JADWAL PENTING & FAQ ==================== -->
+  <section id="faq" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- Timeline Jadwal Penting -->
+      <div class="lg:col-span-5">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emeraldPrimary text-xs font-bold uppercase tracking-wider mb-3">
+          Kalender Seleksi
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Jadwal Penting SPMB</h2>
+        <p class="text-sm text-slate-600 mt-2">Catat tanggal-tanggal penting agar tidak terlewat kuota gelombang pertama.</p>
+
+        <ol class="relative border-l-2 border-emerald-200 ml-3 mt-8 space-y-7">
+          <li class="ml-6">
+            <span class="absolute -left-2.5 flex items-center justify-center w-5 h-5 bg-emeraldPrimary rounded-full ring-4 ring-emerald-100"></span>
+            <span class="text-xs font-bold text-amberAccent uppercase">Nov 2026 – Feb 2027</span>
+            <h3 class="text-base font-bold text-slate-900 mt-0.5">Pendaftaran Gelombang 1 &amp; Indent</h3>
+            <p class="text-sm text-slate-600 mt-1">Prioritas kuota dan potongan biaya pengembangan pendidikan.</p>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2.5 flex items-center justify-center w-5 h-5 bg-emeraldPrimary rounded-full ring-4 ring-emerald-100"></span>
+            <span class="text-xs font-bold text-amberAccent uppercase">Maret – Mei 2027</span>
+            <h3 class="text-base font-bold text-slate-900 mt-0.5">Pendaftaran Gelombang 2</h3>
+            <p class="text-sm text-slate-600 mt-1">Dibuka selama kuota kelas per jenjang masih tersedia.</p>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2.5 flex items-center justify-center w-5 h-5 bg-amberAccent rounded-full ring-4 ring-amber-100"></span>
+            <span class="text-xs font-bold text-amberAccent uppercase">Berkala Setiap Bulan</span>
+            <h3 class="text-base font-bold text-slate-900 mt-0.5">Observasi &amp; Wawancara Orang Tua</h3>
+            <p class="text-sm text-slate-600 mt-1">Jadwal observasi ananda akan diinformasikan melalui WhatsApp &amp; halaman Cek Status.</p>
+          </li>
+          <li class="ml-6">
+            <span class="absolute -left-2.5 flex items-center justify-center w-5 h-5 bg-slate-400 rounded-full ring-4 ring-slate-100"></span>
+            <span class="text-xs font-bold text-slate-500 uppercase">Juli 2027</span>
+            <h3 class="text-base font-bold text-slate-900 mt-0.5">Awal Tahun Ajaran Baru 2027/2028</h3>
+            <p class="text-sm text-slate-600 mt-1">Masa Pengenalan Lingkungan Sekolah (MPLS) untuk seluruh murid baru.</p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="lg:col-span-7">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amberAccent text-xs font-bold uppercase tracking-wider mb-3">
+          Tanya Jawab
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-sm text-slate-600 mt-2">Temukan jawaban cepat seputar pendaftaran SPMB SIT Al-Kautsar Mukomuko.</p>
+
+        <div class="mt-6 space-y-3" id="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:bg-slate-50 transition">
+              <span>Apakah orang tua harus membuat akun atau password untuk mendaftar?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-emeraldPrimary shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Tidak perlu. Orang tua bisa langsung mengisi formulir pendaftaran di halaman <strong>Daftar Sekarang</strong>. Setelah selesai, sistem otomatis memberikan <strong>Nomor Registrasi</strong> yang bisa digunakan untuk mengecek status kapan saja.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:bg-slate-50 transition">
+              <span>Bagaimana jika berkas Kartu Keluarga atau bukti transfer belum siap saat mengisi formulir?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-emeraldPrimary shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Anda tetap bisa menyelesaikan pendaftaran dengan mencentang opsi <strong>"Berkas menyusul via WhatsApp"</strong> di langkah terakhir formulir. Setelah mendapat Nomor Registrasi, berkas dapat dikirim langsung ke Admin WhatsApp jenjang terkait.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:bg-slate-50 transition">
+              <span>Bagaimana cara mengetahui jadwal observasi dan hasil kelulusan?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-emeraldPrimary shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Buka halaman <strong>Cek Status</strong>, lalu masukkan Nomor Registrasi atau Nomor WhatsApp Orang Tua yang didaftarkan. Status verifikasi, jadwal observasi, hingga pengumuman kelulusan akan tampil secara real-time.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:bg-slate-50 transition">
+              <span>Apakah tersedia jalur prestasi atau keringanan biaya bagi saudara kandung?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-emeraldPrimary shrink-0 transition-transform duration-200"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Ya, SIT Al-Kautsar Mukomuko menyediakan jalur <strong>Indent</strong> dan <strong>Prestasi</strong> (Akademik, Non-Akademik, dan Tahfizh) serta program keringanan bagi saudara kandung dan alumni unit di bawah Yayasan Al-Amanah Mukomuko.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
+        <!-- Brand -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emeraldPrimary text-white flex items-center justify-center">
+              <i data-lucide="book-open-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="block text-base font-extrabold text-white">SIT AL-KAUTSAR MUKOMUKO</span>
+              <span class="block text-xs text-slate-400">Yayasan AL-AMANAH MUKOMUKO</span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Lembaga pendidikan Islam terpadu di Kabupaten Mukomuko yang menyelenggarakan jenjang PAUD IT 1, PAUD IT 2, SD IT, SMP IT, dan SMA IT.
+          </p>
+        </div>
+
+        <!-- Tautan Cepat -->
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Tautan Cepat</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-amber-400 transition">Beranda SPMB</a></li>
+            <li><a href="daftar.html" class="hover:text-amber-400 transition">Formulir Pendaftaran Online</a></li>
+            <li><a href="cek-status.html" class="hover:text-amber-400 transition">Cek Status Pendaftaran</a></li>
+            <li><a href="#jenjang" class="hover:text-amber-400 transition">Pilihan Jenjang Pendidikan</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak & Alamat -->
+        <div>
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Alamat &amp; Kontak Resmi</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0 mt-1"></i>
+              <span>Kabupaten Mukomuko, Provinsi Bengkulu</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-amber-400 shrink-0 mt-1"></i>
+              <span>Admin SMP IT: +62 822-8122-6345</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0 mt-1"></i>
+              <span>Layanan Panitia: Senin – Sabtu, 08.00 – 15.00 WIB</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>&copy; 2026–2027 Yayasan AL-AMANAH MUKOMUKO — SIT AL-KAUTSAR MUKOMUKO. Hak Cipta Dilindungi.</p>
+        <p>Portal SPMB Tahun Ajaran 2027/2028</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON & MODAL ==================== -->
+  <div class="fixed bottom-5 right-5 z-50 no-print">
+    <!-- Popup Pilihan Admin Jenjang -->
+    <div id="wa-modal" class="hidden mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-fade-in">
+      <div class="bg-emeraldPrimary text-white px-4 py-3 flex items-center justify-between">
+        <div>
+          <p class="text-sm font-bold">Hubungi Admin SPMB</p>
+          <p class="text-[11px] text-emerald-100">Pilih jenjang yang ingin ditanyakan</p>
+        </div>
+        <button type="button" onclick="toggleWaModal()" class="text-white/80 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="p-3 space-y-2 text-sm" id="wa-admin-list">
+        <!-- Diisi otomatis oleh assets/js/main.js -->
+      </div>
+    </div>
+
+    <!-- Floating Button -->
+    <button
+      type="button"
+      onclick="toggleWaModal()"
+      aria-label="Hubungi Admin WhatsApp"
+      class="ml-auto flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3.5 rounded-full shadow-lg shadow-emerald-900/25 transition hover:scale-105">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="hidden sm:inline text-sm">Bantuan Admin</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
